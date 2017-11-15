@@ -1,0 +1,79 @@
+# Optional; supresses warnings about GPU
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+
+# Read the data
+COLUMNS = ["url", "title_length", "article_length", "keywords", "shares"]
+data = np.genfromtxt("OnlineNewsPopularityNonLinear.csv", delimiter=',', names=COLUMNS)
+
+# Determine how many data points we're using and the order of the equation
+number_of_records = data.size
+equation_order = 3
+
+# Set up the variables and normalize the data
+title_input_data = data["article_length"]/np.max(data["article_length"])
+article_input_data = tf.pow(data["article_length"], 2)/np.max(tf.pow(data["article_length"], 2))
+keywords_input_data = tf.pow(data["article_length"], 3)/np.max(tf.pow(data["article_length"], 3))
+
+# Set up the variables for weights and bias, but as matrices
+w = tf.Variable(np.zeros([equation_order, 1]), dtype="float32", name="w")
+b = tf.Variable(np.zeros([1]), dtype="float32", name="b")
+
+content_info = tf.placeholder("float32", shape=[number_of_records, equation_order])
+actual_shares = tf.placeholder("float32")
+
+# Input data should be a matrix of [number_of_records, equation_order] where
+# each value has been raised to the appropriate power, according to
+# our model.  We'll need to call it 
+def prepared_data (raw_data):
+   x_new = np.zeros([number_of_records, equation_order])
+   x_new[:, 0] = raw_data["article_length"]/np.max(raw_data["article_length"])
+   x_new[:, 1] = np.power(raw_data["article_length"], 2)/np.max(np.power(raw_data["article_length"], 2))
+   x_new[:, 2] = np.power(raw_data["article_length"], 3)/np.max(np.power(raw_data["article_length"], 3))
+   return x_new
+
+# Create the prediction; it's still y = mx + b, but in this case
+# m is a matrix of weights, and x is a matrix of values
+predicted_shares = tf.add(tf.matmul(content_info, w), b)
+input_data = prepared_data(data)
+
+# Loss is the same as before.
+error = tf.square(predicted_shares - actual_shares)
+
+# Create the optimizer
+step_size = .00001
+optimizer = tf.train.GradientDescentOptimizer(step_size).minimize(error)
+
+# Create the model
+model = tf.global_variables_initializer()
+
+# Create the session to run the algorith
+with tf.Session() as session:
+
+   # Initialize everything
+   session.run(model)
+
+   # Run the algorithm
+   for i in range(100000):
+      #Just as before, we run the algorithm, but we're feeding in normalized matrixes rather than single values
+      #session.run(optimizer, feed_dict={content_info: input_data, actual_shares: data['shares']/np.max(data["shares"])})
+      session.run(optimizer, feed_dict={content_info: input_data, actual_shares: data['shares']/np.max(data['shares'])})
+      # Display every 100 results
+      if (i % 100 == 0):
+         print (session.run(w))
+         #print (session.run(predicted_shares - actual_shares))
+
+   #Display the final result	
+   w_value = session.run(w)
+        
+   print ("FINAL:")
+   print (w_value)
+
+   print (w_value[0]*np.max(data["article_length"]))
+   print (w_value[1]*np.max(session.run(tf.pow(data["article_length"], 2))))
+   print (w_value[2]*np.max(session.run(tf.pow(data["article_length"], 3))))
+

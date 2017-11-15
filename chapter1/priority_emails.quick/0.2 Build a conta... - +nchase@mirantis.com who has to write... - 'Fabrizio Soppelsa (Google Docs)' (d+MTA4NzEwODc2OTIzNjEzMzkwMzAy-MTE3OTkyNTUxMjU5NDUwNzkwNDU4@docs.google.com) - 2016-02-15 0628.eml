@@ -1,0 +1,192 @@
+X-Account-Key: account3
+X-UIDL: GmailId152e4b09c870e406
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Delivered-To: nchase@mirantis.com
+Received: by 10.176.0.108 with SMTP id 99csp488937uai;
+        Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+X-Received: by 10.140.25.161 with SMTP id 30mr6271088qgt.73.1455535725717;
+        Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+Return-Path: <3bbbBVjsPAJw9+szgatVkSuj8YuzoVtFkVsVGSsVgU-szkZuzGUtz0TsF0btj0StVGStj0a9K8O.CKKCHA.8KI@docos.bounces.google.com>
+Received: from mail-qg0-x248.google.com (mail-qg0-x248.google.com. [2607:f8b0:400d:c04::248])
+        by mx.google.com with ESMTPS id g7si33774305qhc.102.2016.02.15.03.28.45
+        for <nchase@mirantis.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3bbbBVjsPAJw9+szgatVkSuj8YuzoVtFkVsVGSsVgU-szkZuzGUtz0TsF0btj0StVGStj0a9K8O.CKKCHA.8KI@docos.bounces.google.com designates 2607:f8b0:400d:c04::248 as permitted sender) client-ip=2607:f8b0:400d:c04::248;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of 3bbbBVjsPAJw9+szgatVkSuj8YuzoVtFkVsVGSsVgU-szkZuzGUtz0TsF0btj0StVGStj0a9K8O.CKKCHA.8KI@docos.bounces.google.com designates 2607:f8b0:400d:c04::248 as permitted sender) smtp.mailfrom=3bbbBVjsPAJw9+szgatVkSuj8YuzoVtFkVsVGSsVgU-szkZuzGUtz0TsF0btj0StVGStj0a9K8O.CKKCHA.8KI@docos.bounces.google.com;
+       dkim=pass header.i=@docs.google.com;
+       dmarc=pass (p=REJECT dis=NONE) header.from=docs.google.com
+Received: by mail-qg0-x248.google.com with SMTP id b35so142892729qge.3
+        for <nchase@mirantis.com>; Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=docs.google.com; s=20120806;
+        h=mime-version:references:reply-to:date:message-id:subject:from:to
+         :content-type;
+        bh=CdhuUBF+NeAebwhEM+PcBPiX0upSza7a6tKMSBxYx6g=;
+        b=PAgJu679i9FgYyBeZQvpOpI7CnhWVl3FbcWQaxwaR+w1hEJeJLTuYm1+p5EmF7EYEU
+         9k+r3cmAjoMwsyYiSY5J4t2/LvKqEw0H9OmPf3l2NvXuMOYxVbTG7xzCEWtHeWj7Zl8e
+         oK0shMyjxkkxthMSBqUoTKSWLiX7aM5452rkOJ5/Qw5pJ5Sx+meekt4hfUzGLF8iIG7H
+         q75TBghhMrO1VFT++HVRpVs6SxhTpVx5Wfo31RV9P0JYEyvkP5vnNiXGQxS5q8HQiN3o
+         Vlu7quXILnMLPEYNr85rrd4/eSMhjnNQUJhIWAT2g8tpgLAiCiPoEsiXF1UqPbKv9KNE
+         SbRQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:references:reply-to:date:message-id
+         :subject:from:to:content-type;
+        bh=CdhuUBF+NeAebwhEM+PcBPiX0upSza7a6tKMSBxYx6g=;
+        b=OXoKGwSnNyMUyTXQyCm/UnGA4qYw3JzAvMB2o7qyctoM9MJ8fjDyhKuEf0ZfOTXyx8
+         QPZvQ3KOvL9QGgoMJkToB4cyz55+PNPge3p3pBWrUmO5d+0lipLZrUGRzLmH1+NgLmyy
+         cU/Agvpfr9H7Inq6CDJ/Qii7HTF46BbErk7MlwLBVeIvlceDWqPn4ygVNnczU3vuQOM8
+         MiQetINgukOZSu/9yKzkENWI8Sm2fYAw0/c9ypSTiBrdPz517t/dB+ggwgD7zKVe4N0B
+         tGZf5GQqYaU2DtyzvPijEVLW7s0v/FIO+tXQJd+SN/JhqXQgybkzTkggdDyLCR0oGt0Q
+         WxEA==
+X-Gm-Message-State: AG10YOTLPXju689taystpJAqD7ppZP00ZMsDkCI2mtk/gt932Ct+6HGqy0o3UFEidg==
+MIME-Version: 1.0
+X-Received: by 10.129.116.214 with SMTP id p205mr16256754ywc.55.1455535725546;
+ Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+X-Notifications: XEAAAAG02OX2A-tg4O8NtsLZwvWQ
+X-Document-ID: sP5WEPs_oOmASwrK-wEsfvQ
+References: <d+c1A1V0VQc19vT21BU3dySy13RXNmdlE6QUFBQUFsN2hpemM@docs.google.com>
+X-No-Auto-Attachment: 1
+X-Doco-ID: AAAAAl7hizc
+Reply-to: Reply <d+AORGpRfy-kScop1M1aycrQIgwezzYvLErKjXRBMK25IU7t8NZtm3rZ35Z-OUQBubU2Jvjlj-Gr1AKdpHlT6t4dUU2kAUb4_k8WjLmKJQzKdZNKO5bk_wx1Q@docs.google.com>
+Date: Mon, 15 Feb 2016 03:28:45 -0800 (PST)
+Message-ID: <oTxxuUdpIzlKnwsHTLpQrw@notifications.google.com>
+Subject: 0.2 Build a conta... - +nchase@mirantis.com who has to write...
+From: "Fabrizio Soppelsa (Google Docs)" <d+MTA4NzEwODc2OTIzNjEzMzkwMzAy-MTE3OTkyNTUxMjU5NDUwNzkwNDU4@docs.google.com>
+To: nchase@mirantis.com
+Content-Type: multipart/related; boundary=001a1147f9f0e10c34052bcd5144
+
+--001a1147f9f0e10c34052bcd5144
+Content-Type: multipart/alternative; boundary=001a1147f9f0e10c31052bcd5143
+
+--001a1147f9f0e10c31052bcd5143
+Content-Type: text/plain; charset=UTF-8; format=flowed; delsp=yes
+
+Fabrizio Soppelsa added a comment to 0.2 Build a containerized app  
+(https://docs.google.com/a/mirantis.com/document/d/10-PYxukx4vua5l7an06Uc8fx9qWBdGPhfUpARl13H98/edit?disco=AAAAAl7hizc&usp=comment_email_discussion)
+
+Fabrizio Soppelsa
+| Summary:
++nchase@mirantis.com who has to write this, me or you? :)
+
+
+You received this email because you are mentioned in this thread.
+Change  
+(https://docs.google.com/a/mirantis.com/document/docos/notify?id=10-PYxukx4vua5l7an06Uc8fx9qWBdGPhfUpARl13H98&title=0.2+Build+a+containerized+app)  
+what Google sends you.
+You can reply to this email to reply to the comment.
+
+--001a1147f9f0e10c31052bcd5143
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div itemscope itemtype=3D"http://schema.org/EmailMessage" style=3D"font: 1=
+3px Roboto,Arial;"><div itemprop=3D"about" itemscope itemtype=3D"http://sch=
+ema.org/CreativeWork"><meta itemprop=3D"name" content=3D"0.2 Build a contai=
+nerized app"><meta itemprop=3D"url" content=3D"https://docs.google.com/a/mi=
+rantis.com/document/d/10-PYxukx4vua5l7an06Uc8fx9qWBdGPhfUpARl13H98/edit?dis=
+co=3DAAAAAl7hizc&amp;usp=3Dcomment_email_document"><div style=3D"width: 100=
+%; padding: 24px 0 16px 0; background-color: #f5f5f5; text-align: center;">=
+<div style=3D"display: inline-block; width: 90%; max-width: 680px;min-width=
+: 280px; text-align: left; font-family: Roboto,Arial,Helvetica,sans-serif;"=
+><div style=3D"height: 0px;" dir=3D"ltr"></div><div style=3D"display: block=
+; padding: 0 2px;"><div style=3D"display: block; background: #fff; height: =
+2px;"></div></div><div style=3D"border-left: 1px solid #f0f0f0; border-righ=
+t: 1px solid #f0f0f0;"><div style=3D"padding: 24px 32px 32px 32px; backgrou=
+nd:#fff; border-right: 1px solid #eaeaea; border-left: 1px solid #eaeaea;" =
+dir=3D"ltr"><div style=3D"padding-bottom: 16px; line-height: 21px; border-b=
+ottom: 1px solid #eee"><div itemprop=3D"action" itemscope itemtype=3D"http:=
+//schema.org/ViewAction"><meta itemprop=3D"url" content=3D"https://docs.goo=
+gle.com/a/mirantis.com/document/d/10-PYxukx4vua5l7an06Uc8fx9qWBdGPhfUpARl13=
+H98/edit?disco=3DAAAAAl7hizc&amp;usp=3Dcomment_email_discussion"><meta item=
+prop=3D"name" content=3D"Open Discussion"></div><h2 style=3D"font-size: 14p=
+x; font-weight: normal; display: inline; margin: 0px; line-height: 18px; co=
+lor: #4a4a4a;">Fabrizio Soppelsa added a comment to <a href=3D"https://docs=
+.google.com/a/mirantis.com/document/d/10-PYxukx4vua5l7an06Uc8fx9qWBdGPhfUpA=
+Rl13H98/edit?disco=3DAAAAAl7hizc&amp;usp=3Dcomment_email_document" style=3D=
+"color: #36c; text-decoration: none" target=3D"_blank">0.2 Build a containe=
+rized app</a></h2></div><div style=3D"line-height: 21px; padding-top: 16px;=
+"><div style=3D"overflow: hidden; margin-top:0px; margin-bottom: 24px;"><ta=
+ble role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"widt=
+h:100%"><tr><td style=3D"vertical-align: top; width:10%"><div style=3D"max-=
+height: 77px; padding: 0 15px 0 0"><img src=3D"https://lh4.googleuserconten=
+t.com/-PVxFyIMiIm0/AAAAAAAAAAI/AAAAAAAAABQ/T7OSmhozvl4/s96-k-no/photo.jpg" =
+style=3D"height: 48px; width: 48px;" alt=3D"Fabrizio Soppelsa"></div></td><=
+td style=3D"vertical-align: top"><div style=3D"display: inline-block; paddi=
+ng: 0 15px 0 0; font-size: 13px; line-height: 18px; width:100%"><strong sty=
+le=3D"font-weight: bolder;">Fabrizio Soppelsa</strong><div style=3D"border-=
+left: 1px solid #d3d3d3; padding: 0 5px; color: #888; margin: 10px 0;">Summ=
+ary:</div><p style=3D"margin: 0;">+<a href=3D"mailto:nchase@mirantis.com" t=
+arget=3D"_blank">nchase@mirantis.com</a> who has to write this, me or you? =
+:)</p></div></td></tr></table></div></div></div></div><table style=3D"width=
+: 100%; border-collapse: collapse;" role=3D"presentation"><tr><td style=3D"=
+padding: 0px;"><table style=3D"border-collapse: collapse; width: 3px;" role=
+=3D"presentation"><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" styl=
+e=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"paddi=
+ng: 0px;"></td><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0px;">=
+</td></tr><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"pad=
+ding: 0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;=
+"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td></t=
+r><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f5f5f5" style=3D"padding: 0p=
+x;"></td><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><=
+td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr></tabl=
+e></td><td style=3D"width: 100%; padding: 0px;"><div style=3D"height: 1px; =
+width: auto; border-top: 1px solid #ddd; background:#eaeaea; border-bottom:=
+ 1px solid #f0f0f0;"></div></td><td style=3D"padding: 0px;"><table style=3D=
+"border-collapse: collapse; width: 3px;" role=3D"presentation"><tr height=
+=3D"1"><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0px;"></td><td=
+ width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"=
+1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr><tr height=3D"1"><=
+td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=
+=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"1" bgc=
+olor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr><tr height=3D"1"><td wid=
+th=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"1" b=
+gcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"=
+#f5f5f5" style=3D"padding: 0px;"></td></tr></table></td></tr></table><table=
+ style=3D"padding: 14px 10px 0 10px;" role=3D"presentation" dir=3D"ltr"><tr=
+><td style=3D"width: 100%; font-size:11px; font-family: Roboto,Arial,Helvet=
+ica,sans-serif; color:#646464; line-height: 20px; min-height: 40px; vertica=
+l-align: middle;"><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"background-color: #f5f5f5; margin: 0 auto;"><tbody><tr><td=
+ style=3D"color:#646464; font: 11px Roboto,Arial;vertical-align:middle"><sp=
+an style=3D"padding-right: 5px">You received this email because you are men=
+tioned in this thread.</span><span style=3D"padding-right: 5px"><a href=3D"=
+https://docs.google.com/a/mirantis.com/document/docos/notify?id=3D10-PYxukx=
+4vua5l7an06Uc8fx9qWBdGPhfUpARl13H98&amp;title=3D0.2+Build+a+containerized+a=
+pp" style=3D"color: #36c; text-decoration: none" target=3D"_blank">Change w=
+hat Google Docs sends you.</a></span><span>You can reply to this email to r=
+eply to the discussion.</span></td></tr></tbody></table></td><td style=3D"p=
+adding-left: 20px; vertical-align: middle;"><img src=3D"cid:logo.png" style=
+=3D"vertical-align: middle; margin-left: 22px;"></td></tr></table></div></d=
+iv></div></div>
+--001a1147f9f0e10c31052bcd5143--
+--001a1147f9f0e10c34052bcd5144
+Content-Type: image/png; name="logo.png"
+Content-Disposition: INLINE
+Content-Transfer-Encoding: base64
+X-Attachment-Id: logo.png
+Content-Id: <logo.png>
+
+iVBORw0KGgoAAAANSUhEUgAAAGAAAAAoCAQAAACrmjeyAAADdklEQVR4Ae2XBXcyOxRFd3AKfO7u
+7u7ubry6u7u7t7/6SdZdWTPTtAx9RmXfyk3OSE4UWG9ssskmIY5zn1e85iEnCbOm2M1Pplh0xAxp
+dvHfsZ9aHasgyHvmWbTEHC9Q/DeckHdmTZwGR683UEAB9cyYui+5bSBMs9w4xB0ijvrbDLPIIDty
+28BPua2SmGVs0uyAXDZwTG6qJUhmctBAtb5lgiSsRQNbWdC3vCJbkpzhCmdIrkpX7OMSF9iewYBi
+Fxe4zEECWLklt2wnG45Sx6LEAjUcyUpXXKfP6FUcZEjHUgMX6TTXDXEbBcABfnGASqAaPmlxmGx4
+KqNmggUe+9YVPz3qhPx3G1B8ZNETP8XCHaCAMxRCgRZa8bJoiQK5WZeYp4ofVJvj7yb40l9LeZwC
+vksP2ww8lHySNB+ol9IzY+A2+dyD/CwMVANJpnXeyU7zAaRbXpTnQ98lhsqJSj/fsxpIyHPqSaDh
+ri7P4kaGaQzlw0AV8EJnU2zFwHY5s5/60D/rbIAwgtR5DTzS/0eJAxDgPNWiebgu1btxE3GGzNrf
+QIbym/UorPGh98hEcLLdYqBM//8EJHjGgOnEejwkZcF9YCU69DVPgEGZz25u69o+H/qczs7gZmyJ
+gXb9/zsFzEndFF/Zi4Vy+Qi3neU4KI84CAzp7Lp1M+7PrMsKOImbUbsBE53cJbJ88xZkIdsvCdIk
+D1FAowytm6+6ts6H3q+zRzhJWqZQuWRzFHIMxUqY/baZrXiJm8VzybEJjpNwNWBS177MrMtq6CKI
+gVcWAw8lO4CBMKexEjSNnOSlw0Sce4yIUiC9sI1ZXW4kiYYUzTIJU5l1Mx3ThES/wJzFQJ6YbiIP
+DTGqZCOxEEaGTBZbLTV0MW9qygkh8MRxwLwkzZSUH/rUv0t5gC+8pW7Zg+yOOfB+8PLP33GjWVE8
+lqPDG/O8JeC68oPlqvcon3qQco82ZTMg09EbL1mBFG8Z9Dw6zR6Wcl5vrBJ/5mez0gM8ZtyoLRyX
+z0teA3CGdtdzzpARxS4uc48HXOMQwRWu28N1HnKDPahV6CFOc587HESxU6bccu+5oZ+zF0WOsM9z
+IF3WBtpYExyjQTc2hEDAnB1rgkNybDawW7blYlkBe1gjvHJ8xxoy+UfWDIpXS76x/STAmuIAhbKR
+TlDGKTYqm2yyyR8IK6SwdFJ75gAAAABJRU5ErkJggg==
+--001a1147f9f0e10c34052bcd5144--
+
